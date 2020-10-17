@@ -5,7 +5,7 @@ CFLAGS=--std=c++17 -Wall -Wpedantic
 
 FILE=MODULENAME
 
-tb_$(FILE): obj_dir $(TB_SOURCES)
+tb_$(FILE): obj_dir tb_$(FILE).cpp TestBench.hpp
 	g++ -I obj_dir \
 		-I /usr/local/Cellar/verilator/$(VV)/share/verilator/include \
 		/usr/local/Cellar/verilator/$(VV)/share/verilator/include/verilated.cpp \
@@ -16,7 +16,7 @@ tb_$(FILE): obj_dir $(TB_SOURCES)
 
 obj_dir: $(SOURCES)
 	$(VC) $(VFLAGS) $(FILE).v
-	Make -j -C obj_dir/ -f V$(FILE).mk
+	make -j -C obj_dir/ -f V$(FILE).mk
 
 run-sim: tb_$(FILE)
 	./tb_$(FILE)

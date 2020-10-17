@@ -1,8 +1,16 @@
 `default_nettype none
 
-module MODULENAME(in_wire, out_wire);
-    input   wire in_wire;
-    output  wire out_wire; 
+// simple 8-bit counter
+module MODULENAME(i_reset, i_clk, o_count);
+    input   wire        i_reset;
+    input   wire        i_clk;
+    output  reg [7:0]   o_count;
 
-    assign out_wire = in_wire;
+    always @ (posedge i_clk or posedge i_reset) begin
+        if (i_reset) begin
+            o_count <= 8'b0;
+        end else begin
+            o_count <= o_count + 1;
+        end
+    end
 endmodule
