@@ -11,6 +11,5 @@ cp -r TEMPLATE $MODULENAME
 cd $MODULENAME && \
     mv MODULENAME.v $MODULENAME.v && \
     mv tb_MODULENAME.cpp tb_$MODULENAME.cpp
-    sed -i '' "s/FILE=MODULENAME/FILE=$MODULENAME/g" Makefile
-    sed -i '' "s/MODULENAME/$MODULENAME/g" $MODULENAME.v tb_$MODULENAME.cpp
+    sed -i '' "s/MODULENAME/$MODULENAME/g" Makefile $MODULENAME.v tb_$MODULENAME.cpp
 
