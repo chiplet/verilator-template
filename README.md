@@ -10,12 +10,12 @@ Template for starting up new projects using verilator.
 
 2. Check your verilator version
 
-`verilator -v`
+`verilator --version`
 
 3. Modify the `VV` variable in `TEMPLATE/Makefile` to match your verilator version.
 
 # Usage
-To create a new project simply run the command
+To create a new project simply run the script
 
 `./new_module.sh module-name`
 
