@@ -19,4 +19,4 @@ To create a new project simply run the script
 
 `./new_module.sh module-name`
 
-where `module-name` is the name you want to give to your new verilog module. This creates a new project directory called `module-name` from the project template in specified in `TEMPLATE/`.
+where `module-name` is the name you want to give to your new verilog module. This creates a new directory `module-name/` based on the project template specified in `TEMPLATE/`.
