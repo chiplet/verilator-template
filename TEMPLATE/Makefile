@@ -1,15 +1,14 @@
 VC=verilator
 VFLAGS=-Wall --trace --cc
-VV=4.100
 CFLAGS=--std=c++17 -Wall -Wpedantic
 
 FILE=MODULENAME
 
 tb_$(FILE): obj_dir tb_$(FILE).cpp TestBench.hpp
 	g++ -I obj_dir \
-		-I /usr/local/Cellar/verilator/$(VV)/share/verilator/include \
-		/usr/local/Cellar/verilator/$(VV)/share/verilator/include/verilated.cpp \
-		/usr/local/Cellar/verilator/$(VV)/share/verilator/include/verilated_vcd_c.cpp \
+		-I /usr/share/verilator/include/ \
+		/usr/share/verilator/include/verilated.cpp \
+		/usr/share/verilator/include/verilated_vcd_c.cpp \
 		$(CFLAGS) \
 		tb_$(FILE).cpp obj_dir/V$(FILE)__ALL.a \
 		-o tb_$(FILE)
