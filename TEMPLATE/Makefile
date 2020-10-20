@@ -25,3 +25,5 @@ run-sim: tb_$(FILE)
 clean:
 	rm -rf obj_dir
 	rm tb_MODULENAME
+	rm *.vcd
+
