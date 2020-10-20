@@ -9,9 +9,11 @@ int main(int argc, char* argv[])
 {
     Verilated::commandArgs(argc, argv);
     TestBench<VMODULENAME> tb = TestBench<VMODULENAME>();
+    tb.OpenTrace("trace_MODULENAME.vcd");
 
     for (int t = 0; t < 20; t++)
     {
+        if (t == 10) tb.Reset();
         tb.Tick();
         printf("t = %02d, ", t);
         printf("i_clk = %d, ", tb.GetModule()->i_clk);
@@ -19,4 +21,6 @@ int main(int argc, char* argv[])
         std::cout << "o_count = " << o_count_bits << ", ";
         printf("\n");
     }
+
+    tb.CloseTrace();
 }

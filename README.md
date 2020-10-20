@@ -14,6 +14,13 @@ Template for starting up new projects using verilator.
 
 3. Modify the `VV` variable in `TEMPLATE/Makefile` to match your verilator version.
 
+4. Install gtkwave
+
+`brew cask install gtkwave`
+
+On macOS the command `gtkwave` doesn't seem to work properly when run from the command line.
+A workaround can be found [here](http://labnote.me/gtkwave-macos-commandline-param/)
+
 # Usage
 To create a new project simply run the script
 
