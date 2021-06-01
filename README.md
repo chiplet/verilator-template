@@ -19,7 +19,7 @@ Template for starting up new projects using verilator.
 `brew cask install gtkwave`
 
 On macOS the command `gtkwave` doesn't seem to work properly when run from the command line.
-A workaround can be found [here](http://labnote.me/gtkwave-macos-commandline-param/)
+A workaround can be found [here](https://web.archive.org/web/20210117151608/http://labnote.me/gtkwave-macos-commandline-param/)
 
 # Usage
 To create a new project simply run the script
